@@ -4,7 +4,7 @@ const Pagination = (props) => {
   let pageLinks = []
 
   for (let i = 1; i <= props.pages + 1; i++) {
-    let active = props.activePage == i ? 'active' : ''
+    let active = props.activePage === i ? 'active' : ''
     pageLinks.push(
       <li
         className={`waves-effect ${active}`}

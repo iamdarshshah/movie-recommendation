@@ -1,0 +1,13 @@
+.img {
+  width: 100%;
+  heigth: 360px;
+}
+
+.back {
+  cursor: 'pointer';
+  padding-top: 50px;
+}
+
+span {
+  margin-left: 10px;
+}
