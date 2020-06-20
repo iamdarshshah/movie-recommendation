@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import Movie from './Movies/Movie'
-import { fetchTopRatedMovies } from '../service/index'
+import { fetchMovies } from '../service/index'
 
-export default function TopRated(props) {
-  const [topRated, setTopRated] = useState([])
+export default function MoviesList(props) {
+  const [movies, setMovies] = useState([])
 
   useEffect(() => {
     const fetchAPI = async () => {
-      setTopRated(await fetchTopRatedMovies())
+      setMovies(await fetchMovies())
     }
 
     fetchAPI()
@@ -17,7 +17,7 @@ export default function TopRated(props) {
     <div className='container'>
       <div className='row'>
         <div className='col s12'>
-          {topRated.map((movie) => {
+          {movies.map((movie) => {
             return (
               <Movie
                 key={movie.id}
@@ -27,7 +27,7 @@ export default function TopRated(props) {
                 overview={movie.overview}
                 image={movie.backPoster}
                 date={movie.release_date}
-                type='topRated'
+                type='movies'
               />
             )
           })}

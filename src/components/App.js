@@ -5,6 +5,9 @@ import MovieList from './Movies/MovieList'
 import Pagination from './Pagination/Pagination'
 import MovieInfo from './Movies/MovieInfo'
 import TopRated from './topRated'
+import Upcoming from './Upcoming'
+import NowPlaying from './NowPlaying'
+import MoviesList from './MoviesList'
 
 class App extends Component {
   constructor(props) {
@@ -52,7 +55,7 @@ class App extends Component {
   viewMovieInfo = (id) => {
     let movieInfo
     this.state.movies.forEach((movie, i) => {
-      if (movie.id == id) {
+      if (movie.id === id) {
         movieInfo = movie
       }
     })
@@ -79,6 +82,19 @@ class App extends Component {
               viewMovieInfo={this.viewMovieInfo}
               movies={this.state.movies}
             />
+
+            {(this.props.type === 'nowPlaying' && (
+              <NowPlaying viewMovieInfo={this.viewMovieInfo} />
+            )) ||
+              (this.props.type === 'topRated' && (
+                <TopRated viewMovieInfo={this.viewMovieInfo} />
+              )) ||
+              (this.props.type === 'upcoming' && (
+                <Upcoming viewMovieInfo={this.viewMovieInfo} />
+              )) ||
+              (this.props.type === 'movies' && (
+                <MoviesList viewMovieInfo={this.viewMovieInfo} />
+              ))}
           </div>
         ) : (
           <MovieInfo

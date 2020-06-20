@@ -28,6 +28,20 @@
   color: #61dafb;
 }
 
+.img {
+  height: 360px;
+  width: 100%;
+}
+
+.back {
+  cursor: 'pointer';
+  padding-top: 50px;
+}
+
+span {
+  margin-left: 10px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
