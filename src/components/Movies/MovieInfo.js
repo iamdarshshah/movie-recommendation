@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 import '../../App.css'
 
 export default function MovieInfo(props) {
@@ -7,8 +8,7 @@ export default function MovieInfo(props) {
     <div>
       <div className='container'>
         <div className='row back' onClick={props.closeMovieInfo}>
-          <i className='fa fa-arrow-left' />
-          <span>Go back</span>
+          <Button>BACK</Button>
         </div>
         <div className='row'>
           <div className='col s12 m4'>
