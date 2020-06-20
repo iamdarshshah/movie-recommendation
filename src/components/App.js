@@ -16,7 +16,7 @@ class App extends Component {
       activePage: 1,
       currentMovie: null,
     }
-    this.apiKey = `8f7229a4038cf8ec46c0b563c1c9b463`
+    this.apiKey = process.env.REACT_APP_KEY
   }
 
   nextPage = (pageNumber) => {
