@@ -7,9 +7,6 @@ export default function MovieInfo(props) {
   return (
     <div>
       <div className='container'>
-        <div className='row back' onClick={props.closeMovieInfo}>
-          <Button>BACK</Button>
-        </div>
         <div className='row'>
           <div className='col s12 m4'>
             {props.type === 'search' ? (
@@ -55,6 +52,9 @@ export default function MovieInfo(props) {
               <p>{props.currentMovie.overview}</p>
             </div>
           </div>
+        </div>
+        <div className='row back' onClick={props.closeMovieInfo}>
+          <Button>BACK</Button>
         </div>
       </div>
     </div>

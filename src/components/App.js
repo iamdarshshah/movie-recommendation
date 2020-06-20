@@ -4,10 +4,10 @@ import SearchBar from './SearchBar'
 import MovieList from './Movies/MovieList'
 import Pagination from './Pagination/Pagination'
 import MovieInfo from './Movies/MovieInfo'
-import TopRated from './topRated'
-import Upcoming from './Upcoming'
-import NowPlaying from './NowPlaying'
-import MoviesList from './MoviesList'
+import TopRated from './Tabs/topRated'
+import Upcoming from './Tabs/Upcoming'
+import NowPlaying from './Tabs/NowPlaying'
+import MoviesList from './Tabs/MoviesList'
 
 class App extends Component {
   constructor(props) {
@@ -89,11 +89,17 @@ class App extends Component {
               (this.props.type === 'movies' && <MoviesList />)}
           </div>
         ) : (
-          <MovieInfo
-            closeMovieInfo={this.closeMovieInfo}
-            currentMovie={this.state.currentMovie}
-            type='search'
-          />
+          <>
+            <SearchBar
+              handleSearch={this.handleSearch}
+              handleChange={this.handleChange}
+            />
+            <MovieInfo
+              closeMovieInfo={this.closeMovieInfo}
+              currentMovie={this.state.currentMovie}
+              type='search'
+            />
+          </>
         )}
         {this.state.totalResults > 20 && this.state.currentMovie === null ? (
           <Pagination

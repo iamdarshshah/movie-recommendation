@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import Movie from './Movies/Movie'
-import MovieInfo from './Movies/MovieInfo'
-import { fetchUpcomingMovies } from '../service/index'
+import Movie from '../Movies/Movie'
+import MovieInfo from '../Movies/MovieInfo'
+import { fetchUpcomingMovies } from '../../service/index'
 
 export default function Upcoming(props) {
   const [upcoming, setUpcoming] = useState([])
