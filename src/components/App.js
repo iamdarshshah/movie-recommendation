@@ -83,23 +83,16 @@ class App extends Component {
               movies={this.state.movies}
             />
 
-            {(this.props.type === 'nowPlaying' && (
-              <NowPlaying viewMovieInfo={this.viewMovieInfo} />
-            )) ||
-              (this.props.type === 'topRated' && (
-                <TopRated viewMovieInfo={this.viewMovieInfo} />
-              )) ||
-              (this.props.type === 'upcoming' && (
-                <Upcoming viewMovieInfo={this.viewMovieInfo} />
-              )) ||
-              (this.props.type === 'movies' && (
-                <MoviesList viewMovieInfo={this.viewMovieInfo} />
-              ))}
+            {(this.props.type === 'nowPlaying' && <NowPlaying />) ||
+              (this.props.type === 'topRated' && <TopRated />) ||
+              (this.props.type === 'upcoming' && <Upcoming />) ||
+              (this.props.type === 'movies' && <MoviesList />)}
           </div>
         ) : (
           <MovieInfo
             closeMovieInfo={this.closeMovieInfo}
             currentMovie={this.state.currentMovie}
+            type='search'
           />
         )}
         {this.state.totalResults > 20 && this.state.currentMovie === null ? (

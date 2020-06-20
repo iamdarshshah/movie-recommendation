@@ -17,7 +17,7 @@ export const fetchMovies = async () => {
     backPoster: posterUrl + detail['backdrop_path'],
     popularity: detail['popularity'],
     title: detail['title'],
-    poster: posterUrl + detail['poster_path'],
+    poster_path: posterUrl + detail['poster_path'],
     overview: detail['overview'],
   }))
   return modifiedData
@@ -40,7 +40,7 @@ export const fetchTopRatedMovies = async () => {
     backPoster: posterUrl + detail['backdrop_path'],
     popularity: detail['popularity'],
     title: detail['title'],
-    poster: posterUrl + detail['poster_path'],
+    poster_path: posterUrl + detail['poster_path'],
     overview: detail['overview'],
   }))
   console.log(data)
@@ -64,7 +64,7 @@ export const fetchUpcomingMovies = async () => {
     backPoster: posterUrl + detail['backdrop_path'],
     popularity: detail['popularity'],
     title: detail['title'],
-    poster: posterUrl + detail['poster_path'],
+    poster_path: posterUrl + detail['poster_path'],
     overview: detail['overview'],
   }))
   console.log('upcoming', data)
@@ -88,7 +88,7 @@ export const fetchNowPlayingMovies = async () => {
     backPoster: posterUrl + detail['backdrop_path'],
     popularity: detail['popularity'],
     title: detail['title'],
-    poster: posterUrl + detail['poster_path'],
+    poster_path: posterUrl + detail['poster_path'],
     overview: detail['overview'],
   }))
   return modifiedData
